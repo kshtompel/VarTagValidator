@@ -1,0 +1,36 @@
+{
+    "name": "fivelab/var-tag-validator",
+    "description": "Validate objects by var tag",
+    "keywords": [ "var tag", "var tag validator" ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vitaliy Zhuk",
+            "email": "v.zhuk@fivelab.org"
+        },
+
+        {
+            "name": "FiveLab Team",
+            "email": "dev@fivelab.org",
+            "homepage": "http://fivelab.org"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.4",
+        "fivelab/cache": "~1.0",
+        "fivelab/reflection": "~1.0",
+        "fivelab/exception": "~1.0",
+        "symfony/validator": "~2.3",
+        "phpdocumentor/reflection-docblock": "~2.0"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    },
+
+    "autoload": {
+        "psr-4": { "FiveLab\\Component\\VarTagValidator\\": "src/" }
+    }
+}
