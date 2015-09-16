@@ -15,6 +15,7 @@ use FiveLab\Component\VarTagValidator\Constraint\Factory\ArrayConstraintFactory;
 use FiveLab\Component\VarTagValidator\Constraint\Factory\DoubleConstraintFactory;
 use FiveLab\Component\VarTagValidator\Constraint\Factory\IntegerConstraintFactory;
 use FiveLab\Component\VarTagValidator\Constraint\Factory\ScalarConstraintFactory;
+use FiveLab\Component\VarTagValidator\Constraint\Factory\StringConstraintFactory;
 use FiveLab\Component\VarTagValidator\Exception\ConstraintFactoryNotFoundException;
 
 /**
@@ -100,6 +101,8 @@ class FactoryRegistry implements FactoryRegistryInterface
         $registry->addConstraintFactoryAlias('float', 'double');
 
         $registry->addConstraintFactory('array', new ArrayConstraintFactory());
+
+        $registry->addConstraintFactory('string', new StringConstraintFactory());
 
         return $registry;
     }
