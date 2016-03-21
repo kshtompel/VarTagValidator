@@ -94,11 +94,11 @@ class VarTagValidator implements VarTagValidatorInterface
                     $violation = new ConstraintViolation(
                         $violationForProperty->getMessage(),
                         $violationForProperty->getMessageTemplate(),
-                        $violationForProperty->getMessageParameters(),
+                        $violationForProperty->getParameters(),
                         $violationForProperty->getRoot(),
                         $propertyName,
                         $violationForProperty->getInvalidValue(),
-                        $violationForProperty->getMessagePluralization(),
+                        $violationForProperty->getPlural(),
                         $violationForProperty->getCode()
                     );
 
