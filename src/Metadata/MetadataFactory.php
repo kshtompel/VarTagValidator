@@ -13,6 +13,7 @@ namespace FiveLab\Component\VarTagValidator\Metadata;
 
 use FiveLab\Component\Reflection\Reflection;
 use phpDocumentor\Reflection\DocBlock;
+use phpDocumentor\Reflection\DocBlock\Tags\Var_;
 use phpDocumentor\Reflection\DocBlockFactory;
 
 
