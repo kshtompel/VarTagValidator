@@ -13,6 +13,8 @@ namespace FiveLab\Component\VarTagValidator\Metadata;
 
 use FiveLab\Component\Reflection\Reflection;
 use phpDocumentor\Reflection\DocBlock;
+use phpDocumentor\Reflection\DocBlockFactory;
+
 
 /**
  * Base metadata factory
