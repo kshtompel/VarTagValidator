@@ -31,19 +31,26 @@ class MetadataFactory implements MetadataFactoryInterface
         $metadataProperties = [];
 
         foreach ($properties as $property) {
-            $docBlock = new DocBlock($property);
+            if (is_object($property) && !method_exists($property, 'getDocComment')) {
+                throw new \InvalidArgumentException(
+                    'Invalid object passed; the given reflector must support '
+                    . 'the getDocComment method'
+                );
+            }
+
+            $docblock = $property->getDocComment();
+            $docBlockFactory = DocBlockFactory::createInstance();
+
+            /** @var DocBlock $docBlock */
+            $docBlock = $docBlockFactory->create($docblock);
+
 
             $docVarTags = $docBlock->getTagsByName('var');
 
             if (count($docVarTags)) {
-                /** @var \phpDocumentor\Reflection\DocBlock\Tag\VarTag $docVarTag */
-                $docVarTag = array_pop($docVarTags);
-
-                $types = $docVarTag->getTypes();
-
-                $types = array_map(function ($type) {
-                    return ltrim($type, '\\');
-                }, $types);
+                $types = array_map(function (Var_ $docVarTag) {
+                    return ltrim($docVarTag->getType(), '\\');
+                }, $docVarTags);
 
                 if (count($types)) {
                     $propertyMetadata = new PropertyMetadata($types);

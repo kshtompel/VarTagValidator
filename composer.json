@@ -23,7 +23,7 @@
         "fivelab/reflection": "~1.0",
         "fivelab/exception": "~1.0",
         "symfony/validator": "~2.7|~3.0",
-        "phpdocumentor/reflection-docblock": "~2.0"
+        "phpdocumentor/reflection-docblock": "~3.0"
     },
 
     "require-dev": {
